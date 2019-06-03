@@ -1,45 +1,4 @@
-# The Official raywenderlich.com Java Style Guide
-
-This style guide is different from other you may see, because the focus is
-centered on readability for print and the web. We created this style guide to
-keep the code in our tutorials consistent.
-
-Our overarching goals are __conciseness__, __readability__ and __simplicity__.
-
-You should also check out out [Swift](https://github.com/raywenderlich/swift-style-guide)
-and [Objective-C](https://github.com/raywenderlich/objective-c-style-guide)
-style guides too.
-
-## Inspiration
-
-This style-guide is somewhat of a mash-up between the existing Java language
-style guides, and a tutorial-readability focused Swift style-guide. The language
-guidance is drawn from the
-[Android contributors style guide](https://source.android.com/source/code-style.html)
-and the
-[Google Java Style Guide](https://google-styleguide.googlecode.com/svn/trunk/javaguide.html).
-Alterations to support additional readability in tutorials were inspired by the
-[raywenderlich.com Swift style guide](https://github.com/raywenderlich/swift-style-guide).
-
-## Android Studio Coding Style
-
-It is possible to get Android Studio to adhere to these style guidelines, via
-a rather complex sequence of menus. To make it easier, we've provided a coding
-style that can be imported into Android Studio.
-
-First, clone this repository and run `install.sh`.
-
-Then, open Android Studio. To set this codestyle as the default, select
-__File > Other Settings > Default Settings...__:
-
-![Default Settings](resources/default_settings.png)
-
-In __Editor > Code Style__, choose the __Scheme__ to be __raywenderlich.com__:
-
-![Setting the Scheme](resources/setting_scheme.png)
-
-From now on, projects you create _should_ follow the correct style guidelines.
-
+# The Official Auction Mobility Java Style Guide forked from https://github.com/raywenderlich/java-style-guide and adopted a bit.
 
 ## Table of Contents
 
@@ -115,27 +74,18 @@ words:
 public static final int THE_ANSWER = 42;
 ```
 
-As distasteful as it is, field naming should follow the Android source code
-naming conventions:
-
-- Non-public, non-static field names start with an `m`.
-- Static field names start with an `s`.
-
-For example:
+Fields naming example:
 
 ```java
 public class MyClass {
   public static final int SOME_CONSTANT = 42;
   public int publicField;
-  private static MyClass sSingleton;
-  int mPackagePrivate;
-  private int mPrivate;
-  protected int mProtected;
+  private static MyClass singleton;
+  int packagePrivate;
+  private int private;
+  protected int protected;
 }
 ```
-
-> __Note:__ You can set Android Studio to follow this convention. See this SO
-> link for details http://stackoverflow.com/questions/22732722/intellij-android-studio-member-variable-prefix
 
 ### Variables & Parameters
 
@@ -204,24 +154,19 @@ Enum classes without methods may be formatted without line-breaks, as follows:
 private enum CompassDirection { EAST, NORTH, WEST, SOUTH }
 ```
 
-## Spacing
-
-Spacing is especially important in raywenderlich.com code, as code needs to be
-easily readable as part of the tutorial. Java does not lend itself well to this.
-
-### Indentation
+## Spacing and indentation
 
 Indentation is using spaces - never tabs.
 
 #### Blocks
 
-Indentation for blocks uses 2 spaces (not the default 4):
+Indentation for blocks uses 4 spaces:
 
 __BAD:__
 
 ```java
 for (int i = 0; i < 10; i++) {
-    Log.i(TAG, "index=" + i);
+  Log.i(TAG, "index=" + i);
 }
 ```
 
@@ -229,7 +174,7 @@ __GOOD:__
 
 ```java
 for (int i = 0; i < 10; i++) {
-  Log.i(TAG, "index=" + i);
+    Log.i(TAG, "index=" + i);
 }
 ```
 
@@ -253,7 +198,7 @@ CoolUiWidget widget =
 
 ### Line Length
 
-Lines should be no longer than 100 characters long.
+Lines should be no longer than 120 characters long.
 
 
 ### Vertical Spacing
@@ -418,7 +363,7 @@ __GOOD:__
 
 ### Indentation
 
-Similarly to Java, indentation should be __two characters__.
+Similarly to Java, indentation should be __four characters__.
 
 ### Use Context-Specific XML Files
 
@@ -458,66 +403,3 @@ __GOOD:__
 ```java
 String color = "red";
 ```
-
-## Copyright Statement
-
-The following copyright statement should be included at the top of every source
-file:
-
-    /*
-     * Copyright (c) 2017 Razeware LLC
-     * 
-     * Permission is hereby granted, free of charge, to any person obtaining a copy
-     * of this software and associated documentation files (the "Software"), to deal
-     * in the Software without restriction, including without limitation the rights
-     * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-     * copies of the Software, and to permit persons to whom the Software is
-     * furnished to do so, subject to the following conditions:
-     * 
-     * The above copyright notice and this permission notice shall be included in
-     * all copies or substantial portions of the Software.
-     * 
-     * Notwithstanding the foregoing, you may not use, copy, modify, merge, publish, 
-     * distribute, sublicense, create a derivative work, and/or sell copies of the 
-     * Software in any work that is designed, intended, or marketed for pedagogical or 
-     * instructional purposes related to programming, coding, application development, 
-     * or information technology.  Permission for such use, copying, modification,
-     * merger, publication, distribution, sublicensing, creation of derivative works, 
-     * or sale is expressly withheld.
-     *
-     * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-     * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-     * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-     * THE SOFTWARE.
-     */
-
-## Smiley Face
-
-Smiley faces are a very prominent style feature of the raywenderlich.com site!
-It is very important to have the correct smile signifying the immense amount of
-happiness and excitement for the coding topic. The closing square bracket ] is
-used because it represents the largest smile able to be captured using ASCII
-art. A closing parenthesis ) creates a half-hearted smile, and thus is not
-preferred.
-
-Bad:
-
-    :)
-
-Good:
-
-    :]
-
-## Credits
-
-This style guide is a collaborative effort from the most stylish
-raywenderlich.com team members:
-
-- [Darryl Bayliss](https://github.com/DarrylBayliss)
-- [Sam Davies](https://github.com/sammyd)
-- [Mic Pringle](https://github.com/micpringle)
-- [Ray Wenderlich](https://github.com/rwenderlich)
-
